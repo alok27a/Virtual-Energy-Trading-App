@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+gridstatus
+httpx
+pandas
+python-dotenv
+passlib[bcrypt]
+python-jose[cryptography]
+motor
+beanie
+pydantic-settings
+pydantic[email]
