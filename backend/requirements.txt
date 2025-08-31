@@ -10,3 +10,4 @@ motor
 beanie
 pydantic-settings
 pydantic[email]
+python-multipart
