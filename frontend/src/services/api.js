@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://127.0.0.1:8000';
+const API_BASE_URL = 'https://virtual-energy-trading-app.onrender.com';
 
 async function fetchApi(endpoint, options = {}) {
   const url = `${API_BASE_URL}${endpoint}`;
