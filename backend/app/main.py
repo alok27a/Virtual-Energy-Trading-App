@@ -35,3 +35,4 @@ app.include_router(simulation.router, prefix="/api/v1/simulations", tags=["Simul
 def read_root():
     """A simple root endpoint to confirm the API is running."""
     return {"message": "Welcome to the Virtual Energy Trader API v3 (MongoDB)!"}
+
