@@ -81,6 +81,35 @@ This platform allows you to test these strategies using real historical data wit
 *   **API Communication:** Fetch API
     
 
+### Backend (`/backend`)
+```
+    /app
+    |-- /api
+    |   |-- /endpoints  (API routes for auth, bids, etc.)
+    |-- /auth           (Security, JWT handling, dependencies)
+    |-- /core           (Configuration settings)
+    |-- /models         (Database models using Beanie)
+    |-- /schemas        (Pydantic schemas for data validation)
+    |-- /services       (Business logic for simulation and grid data)
+    |-- database.py     (Database initialization)
+    |-- main.py         (Main FastAPI app entrypoint)
+    |-- .env            (Environment variables)
+    |-- requirements.txt
+``` 
+
+### Frontend (`/frontend`)
+```
+    /src
+    |-- /components     (Reusable React components: charts, forms, tables)
+    |-- /context        (Global state management, e.g., AuthContext)
+    |-- /pages          (Top-level page components: Login, Signup, Dashboard)
+    |-- /services       (API communication layer)
+    |-- App.js          (Main application router)
+    |-- index.js        (Application entrypoint)
+    |-- theme.js        (Chakra UI custom theme)
+    |-- package.json
+```
+
 ## Setup and Installation
 To run this project, you will need **Node.js** and **npm** installed.
 
@@ -182,3 +211,19 @@ This platform operates on several key principles and assumptions outlined in the
 *   **The 11 AM Bidding Deadline:** The official specification requires an 11 AM deadline. This rule is implemented in the backend, but with a crucial modification for a simulation tool:
     
     > **The 11 AM UTC deadline is enforced ONLY for bids placed for the** _**current day**_**.** This is a deliberate design choice to allow users the flexibility to run simulations on **any historical data**. Without this exception, it would be impossible to test past market scenarios.
+
+## Future Roadmap
+
+This platform provides a strong foundation for a more advanced energy trading simulation. Potential future enhancements include:
+
+*   **Advanced Charting:** Integrate more sophisticated charting libraries to include technical indicators like moving averages, volume profiles, or candlestick charts for price data.
+    
+*   **Portfolio Management Page:** A dedicated dashboard page to view all-time P&L, trade history across all dates, and overall performance metrics.
+    
+*   **More Complex Bid Types:** Introduce other common bid types found in energy markets, such as block bids (linking bids across multiple hours) or virtual bids.
+    
+*   **Risk Management Features:** Allow users to set daily loss limits or position size limits to practice disciplined trading.
+    
+*   **User Leaderboard:** Implement a competitive leaderboard to rank traders by their weekly or monthly P&L, fostering engagement.
+    
+*   **Machine Learning Integration:** Develop a feature that uses historical data to suggest potentially profitable trading hours or price points based on machine learning models.
